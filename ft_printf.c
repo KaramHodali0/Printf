@@ -1,19 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kalhouda <kalhouda@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/03 18:23:37 by kalhouda          #+#    #+#             */
-/*   Updated: 2026/10/04 12:19:19 by kalhouda         ###   ########.fr       */
+/*   Created: 2026/10/04 15:29:36 by kalhouda          #+#    #+#             */
+/*   Updated: 2026/10/04 16:02:15 by kalhouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+int	ft_printf(const char *str, ...)
+{
+	int		i;
+	va_list	args;
 
-# include <stdarg.h>
-# include <unistd.h>
+	va_start(args, str);
+	i = 0;
+	while (*str != '\0')
+	{
+		if (*str == '%')
+		{
+			// doing work here
+		}
+		else
+		{
+			write(1, str, 1);
+			i++;
+		}
+		str++;
+	}
+	return (i);
+}
 
-#endif
+int	main(void)
+{
+	ft_printf("hello, world");
+}
