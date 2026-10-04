@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_pointer.c                                    :+:      :+:    :+:   */
+/*   print_unsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kalhouda <kalhouda@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/04 23:57:44 by kalhouda          #+#    #+#             */
-/*   Updated: 2026/10/05 00:45:55 by kalhouda         ###   ########.fr       */
+/*   Created: 2026/10/05 00:48:05 by kalhouda          #+#    #+#             */
+/*   Updated: 2026/10/05 00:56:37 by kalhouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int print_pointer(void *ptr)
+int print_unsigned(unsigned int n)
 {
     int counter;
-    unsigned long a;
 
-    if (ptr == NULL)
-        counter += print_string("(nil)");
     counter = 0;
-    a = (unsigned long)ptr;
-
-    counter += print_string("0x");
-    counter += print_hex(a, 0);
-
+    if (n < 10)
+    {
+        counter += print_char(n + '0');
+    }
+    if (n >= 10)
+    {
+        counter += print_unsigned(n / 10);
+        counter += print_char(n % 10 + '0');
+    }
     return (counter);
 }
