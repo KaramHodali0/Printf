@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kalhouda <kalhouda@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/03 18:23:37 by kalhouda          #+#    #+#             */
-/*   Updated: 2026/10/04 23:32:31 by kalhouda         ###   ########.fr       */
+/*   Created: 2026/10/04 22:58:00 by kalhouda          #+#    #+#             */
+/*   Updated: 2026/10/04 23:17:11 by kalhouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include <stdarg.h>
-#include <unistd.h>
+int print_number(int t)
+{
+    long n;
+    int counter;
 
-int ft_printf(const char *str, ...);
-int print_char(char c);
-int print_string(char *str);
-int print_number(int t);
-int print_hex(unsigned int n, int uppercase);
+    n = t;
+    counter = 0;
+    if (n < 0)
+    {
+        counter += print_char('-');
+        n = -n;
+    }
+    if (n < 10)
+    {
+        counter += print_char(n + '0');
+    }
+    if (n >= 10)
+    {
+        counter += print_number(n / 10);
+        counter += print_char(n % 10 + '0');
+    }
 
-#endif
+    return (counter);
+}

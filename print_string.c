@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kalhouda <kalhouda@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/03 18:23:37 by kalhouda          #+#    #+#             */
-/*   Updated: 2026/10/04 23:32:31 by kalhouda         ###   ########.fr       */
+/*   Created: 2026/10/04 22:48:42 by kalhouda          #+#    #+#             */
+/*   Updated: 2026/10/04 22:57:07 by kalhouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include <stdarg.h>
-#include <unistd.h>
+static int str_len(char *str)
+{
+    int i;
 
-int ft_printf(const char *str, ...);
-int print_char(char c);
-int print_string(char *str);
-int print_number(int t);
-int print_hex(unsigned int n, int uppercase);
+    i = 0;
+    while (str[i] != '\0')
+        i++;
+    return (i);
+}
 
-#endif
+int print_string(char *str)
+{
+    if (!str)
+    {
+        write(1, "(null)", 6);
+        return (6);
+    }
+    write(1, str, str_len(str));
+    return (str_len(str));
+}

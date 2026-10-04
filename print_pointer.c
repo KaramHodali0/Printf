@@ -1,25 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kalhouda <kalhouda@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/03 18:23:37 by kalhouda          #+#    #+#             */
-/*   Updated: 2026/10/04 23:32:31 by kalhouda         ###   ########.fr       */
+/*   Created: 2026/10/04 23:57:44 by kalhouda          #+#    #+#             */
+/*   Updated: 2026/10/05 00:06:33 by kalhouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include <stdarg.h>
-#include <unistd.h>
-
-int ft_printf(const char *str, ...);
-int print_char(char c);
-int print_string(char *str);
-int print_number(int t);
-int print_hex(unsigned int n, int uppercase);
-
-#endif
+int print_pointer(void *ptr)
+{
+}
