@@ -12,19 +12,19 @@
 
 #include "ft_printf.h"
 
-int print_unsigned(unsigned int n)
+int	print_unsigned(unsigned int n)
 {
-    int counter;
+	int	counter;
 
-    counter = 0;
-    if (n < 10)
-    {
-        counter += print_char(n + '0');
-    }
-    if (n >= 10)
-    {
-        counter += print_unsigned(n / 10);
-        counter += print_char(n % 10 + '0');
-    }
-    return (counter);
+	counter = 0;
+	if (n < 10)
+	{
+		counter += print_char(n + '0');
+	}
+	if (n >= 10)
+	{
+		counter += print_unsigned(n / 10);
+		counter += print_char(n % 10 + '0');
+	}
+	return (counter);
 }

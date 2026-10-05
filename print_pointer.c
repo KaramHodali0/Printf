@@ -12,18 +12,16 @@
 
 #include "ft_printf.h"
 
-int print_pointer(void *ptr)
+int	print_pointer(void *ptr)
 {
-    int counter;
-    unsigned long a;
+	int				counter;
+	unsigned long	a;
 
-    if (ptr == NULL)
-        counter += print_string("(nil)");
-    counter = 0;
-    a = (unsigned long)ptr;
-
-    counter += print_string("0x");
-    counter += print_hex(a, 0);
-
-    return (counter);
+	if (ptr == NULL)
+		counter += print_string("(nil)");
+	counter = 0;
+	a = (unsigned long)ptr;
+	counter += print_string("0x");
+	counter += print_hex(a, 0);
+	return (counter);
 }

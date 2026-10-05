@@ -12,27 +12,26 @@
 
 #include "ft_printf.h"
 
-int print_number(int t)
+int	print_number(int t)
 {
-    long n;
-    int counter;
+	long	n;
+	int		counter;
 
-    n = t;
-    counter = 0;
-    if (n < 0)
-    {
-        counter += print_char('-');
-        n = -n;
-    }
-    if (n < 10)
-    {
-        counter += print_char(n + '0');
-    }
-    if (n >= 10)
-    {
-        counter += print_number(n / 10);
-        counter += print_char(n % 10 + '0');
-    }
-
-    return (counter);
+	n = t;
+	counter = 0;
+	if (n < 0)
+	{
+		counter += print_char('-');
+		n = -n;
+	}
+	if (n < 10)
+	{
+		counter += print_char(n + '0');
+	}
+	if (n >= 10)
+	{
+		counter += print_number(n / 10);
+		counter += print_char(n % 10 + '0');
+	}
+	return (counter);
 }

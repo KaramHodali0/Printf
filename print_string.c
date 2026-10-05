@@ -12,23 +12,23 @@
 
 #include "ft_printf.h"
 
-static int str_len(char *str)
+static int	str_len(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i] != '\0')
-        i++;
-    return (i);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 
-int print_string(char *str)
+int	print_string(char *str)
 {
-    if (!str)
-    {
-        write(1, "(null)", 6);
-        return (6);
-    }
-    write(1, str, str_len(str));
-    return (str_len(str));
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	write(1, str, str_len(str));
+	return (str_len(str));
 }
