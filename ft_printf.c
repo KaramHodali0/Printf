@@ -6,7 +6,7 @@
 /*   By: kalhouda <kalhouda@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:29:36 by kalhouda          #+#    #+#             */
-/*   Updated: 2026/10/05 13:44:35 by kalhouda         ###   ########.fr       */
+/*   Updated: 2026/10/05 14:39:15 by kalhouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,27 @@
 
 static int	ft_check_str(const char str, va_list *args)
 {
-    int counter;
+	int	counter;
 
-    counter = 0;
-    if (str == 'c')
-        counter += print_char(va_arg(*args, int));
-    else if (str == 's')
-        counter += print_string(va_arg(*args, char *));
-     else if (str == 'd' || str == 'i')
-        counter += print_number(va_arg(*args, int));
-    else if (str == 'u')
-        counter += print_unsigned(va_arg(*args, unsigned int));
-    else if (str == 'x')
-        counter += print_hex(va_arg(*args, unsigned int), 0);
-    else if (str == 'X')
-        counter += print_hex(va_arg(*args, unsigned int), 1);
+	counter = 0;
+	if (str == 'c')
+		counter += print_char(va_arg(*args, int));
+	else if (str == 's')
+		counter += print_string(va_arg(*args, char *));
+	else if (str == 'd' || str == 'i')
+		counter += print_number(va_arg(*args, int));
+	else if (str == 'u')
+		counter += print_unsigned(va_arg(*args, unsigned int));
+	else if (str == 'x')
+		counter += print_hex(va_arg(*args, unsigned int), 0);
+	else if (str == 'X')
+		counter += print_hex(va_arg(*args, unsigned int), 1);
+	else if (str == 'p')
+		counter += print_pointer(va_arg(*args, void *));
 	else if (str == '%')
 		counter += print_char('%');
 	return (counter);
 }
-
 
 int	ft_printf(const char *str, ...)
 {
@@ -58,9 +59,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (i);
-}
-
-int	main(void)
-{
-	ft_printf("hello, world");
 }

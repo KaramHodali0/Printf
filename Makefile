@@ -6,25 +6,30 @@
 #    By: kalhouda <kalhouda@learner.42.tech>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/03 18:24:45 by kalhouda          #+#    #+#              #
-#    Updated: 2026/10/05 13:47:28 by kalhouda         ###   ########.fr        #
+#    Updated: 2026/10/05 14:16:12 by kalhouda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = libftprintf.a
-
+NAME = libftprintf.a
 
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = 
+SRCS = print_unsigned.c \
+	   print_string.c \
+	   print_pointer.c \
+	   print_number.c \
+	   print_hexadecimal.c \
+	   print_char.c \
+	   ft_printf.c
 
 OBJS = $(SRCS:.c=.o)
 
-all = $(Name)
+all: $(NAME)
 
-$(Name): $(OBJS)
-	ar rcs $@ $^ 
+$(NAME): $(OBJS)
+	ar rcs $@ $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
