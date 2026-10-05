@@ -23,5 +23,6 @@ int	print_number(int t);
 int	print_hex(unsigned int n, int uppercase);
 int	print_pointer(void *ptr);
 int	print_unsigned(unsigned int n);
+int	ft_check_str(const char str, va_list args);
 
 #endif
