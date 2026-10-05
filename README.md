@@ -131,12 +131,3 @@ No complex data structure is required. The only state is:
 - [cppreference: `va_arg`](https://en.cppreference.com/w/c/variadic/va_arg)
 - The 42 subject for `ft_printf`.
 
-### Use of AI
-
-AI (Claude) was used as a support tool, not to write the project from scratch:
-
-- **Debugging:** helped identify why the `%p` tests were failing (missing `'p'` case in the dispatcher, early return for `NULL`, and `print_hex` needing `unsigned long`).
-- **Code review:** suggestions about Norm compliance and edge cases (such as a format string ending with `%`).
-- **Documentation:** helped structure and draft this README.
-
-All code was written, tested and understood by the author.
