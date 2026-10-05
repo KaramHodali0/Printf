@@ -6,7 +6,7 @@
 /*   By: kalhouda <kalhouda@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:29:36 by kalhouda          #+#    #+#             */
-/*   Updated: 2026/10/05 14:39:15 by kalhouda         ###   ########.fr       */
+/*   Updated: 2026/10/05 16:31:02 by kalhouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	while (*str != '\0')
 	{
-		if (*str == '%')
+		if (*str == '%' && *(str + 1))
 		{
 			i += ft_check_str(*(str + 1), &args);
 			str += 2;
