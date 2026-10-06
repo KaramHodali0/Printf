@@ -114,17 +114,4 @@ This project focuses on:
 * C programming documentation and manual pages.
 * 42 ft_printf subject.
 
-## AI Usage
-
-AI was used as a learning and development aid during this project.
-
-It was mainly used to:
-
-* Explain C concepts and variadic functions.
-* Help understand `va_list`, `va_start`, `va_arg`, and `va_end`.
-* Explain compiler and Makefile errors.
-* Review code and identify possible bugs.
-* Clarify the behavior of the standard `printf()` function.
-
-The implementation and understanding of the project were developed by the student, with AI used as a guide and learning resource.
 
