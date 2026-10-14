@@ -1,6 +1,3 @@
-# ft_printf
-
-*This activity has been created as part of the 42 curriculum by kalhouda.*
 
 ## Description
 
@@ -83,23 +80,6 @@ int main(void)
 ├── print_hexadecimal.c
 └── print_pointer.c
 ```
-
-## Concepts Learned
-
-This project focuses on:
-
-* Variadic functions.
-* `va_list`.
-* `va_start()`.
-* `va_arg()`.
-* `va_end()`.
-* Function pointers.
-* Handling different data types.
-* Number conversion.
-* Hexadecimal representation.
-* Pointer addresses.
-* Return values and error handling.
-* Building a static library with `Makefile`.
 
 ## Resources
 
